@@ -8,7 +8,7 @@ const links = [
     url: "/",
   },
   {
-    title: "CV",
+    title: "Expériences",
     description: "Mon parcours et mes expériences",
     url: "/CV",
   },
@@ -18,7 +18,7 @@ const links = [
     url: "/expo",
   },
   {
-    title: "Boutiques",
+    title: "Boutique",
     description: "Mes expositions",
     url: "/Artisannat",
   },

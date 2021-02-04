@@ -10,3 +10,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#root {
+  /* For sticky footer */
+  display: flex;
+  flex-direction: column;
+}
+.content {
+  /* For sticky footer */
+  flex: 1 0 auto;
+}

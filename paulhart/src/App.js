@@ -4,6 +4,7 @@ import './App.module.css';
 import Header from './components/Header';
 import Home from "./pages/Home"
 import Footer from "./components/Footer";
+import Exhibition from "./pages/exhibition";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
     <div>
       <Switch >
         <Route exact path="/" component={Home} />
+        <Route exact path="/expo" component={Exhibition} />
       </Switch>
     </div>
     <Footer />
