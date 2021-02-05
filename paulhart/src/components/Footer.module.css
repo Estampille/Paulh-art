@@ -1,7 +1,6 @@
 .footer{
 
-  background-color: var(--gray-blue);
-  color: var(--light-blue);
+  background-color:#1d1f22 ;
   padding: 1.5rem;
 
   flex-shrink: 0; /* For sticky footer */
@@ -10,4 +9,6 @@
   text-align: center;
   letter-spacing: 0.1px;
 
+  border-top: solid 1px white;
+ 
 }
