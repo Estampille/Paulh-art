@@ -4,10 +4,9 @@ import styles from "./article.module.css";
 
 export default function Shop() {
   const [sculptureDetail, setSculptureDetail] = useState({});
-  console.log(sculptureDetail);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/`)
+    fetch(`http://localhost:5000/sculpture`)
       .then((res) => res.json())
       .then((sculptureDetail_) => setSculptureDetail(sculptureDetail_));
   }, []);
@@ -16,7 +15,7 @@ export default function Shop() {
 
   return (
     <div className={styles.all}>
-      {sculptureDetail.length < 2
+      {sculptureDetail.length < 1
         ? ""
         : Object.entries(sculptureDetail).map(([key, item]) => (
             <article className={styles.card}>

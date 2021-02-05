@@ -1,0 +1,17 @@
+.contain{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card{
+  padding-bottom:2%;
+  border-bottom: solid 1px white;
+  margin-bottom: 2%;
+}
+
+.photo{
+  display:flex;
+  flex-direction: row;
+}

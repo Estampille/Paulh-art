@@ -10,6 +10,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 5vh;
   
 }
 .name{
@@ -20,5 +21,11 @@
   width: 30vw;
   height: 50vh;
   border-radius: 30px;
-  
+}  
+.name{
+height: 5vh;
+ } 
+
+.material{
+  height:7vh;
 }
