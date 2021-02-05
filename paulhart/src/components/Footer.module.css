@@ -1,5 +1,5 @@
 .footer{
-  flex-shrink: 0;
+
   background-color: var(--gray-blue);
   color: var(--light-blue);
   padding: 1.5rem;
@@ -9,7 +9,5 @@
   flex-direction: column;
   text-align: center;
   letter-spacing: 0.1px;
-
-
 
 }

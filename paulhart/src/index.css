@@ -3,6 +3,7 @@
 body {
   margin: 0;
   font-family: 'Source Sans Pro', sans-serif;
+  height:100%;
 
 }
 
@@ -19,4 +20,10 @@ code {
 .content {
   /* For sticky footer */
   flex: 1 0 auto;
+}
+html,
+body,
+#root {
+  height: 100%;
+  
 }
