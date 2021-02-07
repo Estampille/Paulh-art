@@ -34,7 +34,7 @@ export default function Exhibition() {
               <span className={styles.organisation}>
                 {item.organisation}, {item.city}
               </span>
-              <span className={styles.date}>{item.date}</span>
+              <span className={styles.date}>, {item.date}</span>
             </article>
           ))}
     </div>

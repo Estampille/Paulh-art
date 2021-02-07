@@ -1,4 +1,3 @@
-import React, { useEffect, useRef, useState } from "react";
 import styles from "./navbar.module.css";
 
 const links = [
@@ -10,7 +9,7 @@ const links = [
   {
     title: "Expériences",
     description: "Mon parcours et mes expériences",
-    url: "/CV",
+    url: "/Expériences",
   },
   {
     title: "Expositions",

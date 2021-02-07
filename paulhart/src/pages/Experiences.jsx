@@ -1,4 +1,4 @@
-import styles from "./Cv.module.css";
+import styles from "./Experiences.module.css";
 import Experience from "../components/Experience";
 
 export default function Cv() {

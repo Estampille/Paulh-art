@@ -1,0 +1,18 @@
+.cv{
+  
+  display: -ms-flex;
+	display: -webkit-flex;
+	display: flex;
+	width:80%;
+	margin-left: 20%;
+	
+	justify-content: space-around;
+}
+
+.details{
+	width: 80%;
+}
+
+.name{
+	width:50%;
+}
