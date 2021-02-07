@@ -4,6 +4,10 @@ body {
   margin: 0;
   font-family: 'Source Sans Pro', sans-serif;
   height:100%;
+  
+  background-color: #1d1f22;
+
+  
 
 }
 
@@ -27,3 +31,4 @@ body,
   height: 100%;
   
 }
+

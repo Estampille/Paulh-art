@@ -33,6 +33,38 @@ app.get("/exhibition", (req, res)=> {
   });
 });
 
+app.post(`/${section}/`, (req, res)=> {
+const {name, category} =req.body;
+if (section =exhibition)
+{
+connection.query(
+  "INSERT INTO exhibition(name, category) VALUES (?, ?)",
+  [title, genre, picture, artist],
+  (err, results) => {
+    if (err) {
+      console.log(err);
+     res.status(500).json({"error" : "Error saving data"});
+    } else {
+      res.status(200).json({"msg" : "Successfully saved" });
+    }
+  }
+)
+}
+else {
+connection.query(
+  "INSERT INTO sculpture(name, category) VALUES (?, ?)",
+  [title, genre, picture, artist],
+  (err, results) => {
+    if (err) {
+      console.log(err);
+     res.status(500).json({"error" : "Error saving data"});
+    } else {
+      res.status(200).json({"msg" : "Successfully saved" });
+    }
+  }
+)
+}
+});
 
 app.get("/experience", async (req, res)=> {
 const stage = connection.query("SELECT * FROM exhibition WHERE category = 'Stage' ORDER BY date");
@@ -69,6 +101,11 @@ return res.json({
 });
 
 });
+
+
+
+
+
 
 app.listen(port, (err) => {
   if (err) {

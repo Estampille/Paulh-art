@@ -1,5 +1,11 @@
 .head{
   border-bottom: solid white 2px;
+  
+  position: relative;
+  top: 0;
+  width: 100%;
+  background-color: #1d1f22;
+  flex-shrink: 0
 }
 
 h1{

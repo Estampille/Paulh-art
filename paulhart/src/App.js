@@ -7,12 +7,13 @@ import Footer from "./components/Footer";
 import Exhibition from "./pages/exhibition";
 import Shop from './pages/Shop';
 import Experiences from './pages/Experiences';
+import styles from './App.module.css';
 
 function App() {
   return (
     <BrowserRouter>
-    <Header/>
-    <div>
+    <Header className={styles.header}/>
+    <div className={styles.content}>
       <Switch >
         <Route exact path="/" component={Home} />
         <Route exact path="/expo" component={Exhibition} />
