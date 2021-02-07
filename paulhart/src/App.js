@@ -8,6 +8,7 @@ import Exhibition from "./pages/exhibition";
 import Shop from './pages/Shop';
 import Experiences from './pages/Experiences';
 import styles from './App.module.css';
+import contenu from './pages/contenu';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route exact path="/expo" component={Exhibition} />
         <Route exact path="/Artisannat" component={Shop} />
         <Route exact path="/Expériences" component={Experiences} />
+        <Route exact path="/Contenu" component={contenu} />
       </Switch>
     </div>
     <Footer />

@@ -21,6 +21,11 @@ const links = [
     description: "Mes expositions",
     url: "/Artisannat",
   },
+  {
+    title: "ajouter",
+    description: "ajouter un contenu",
+    url: "/contenu",
+  },
 ];
 
 export default function Navbar() {
