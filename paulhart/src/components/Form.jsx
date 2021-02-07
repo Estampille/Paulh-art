@@ -3,9 +3,9 @@ import styles from "./Form.module.css";
 
 export default function Form() {
   const [name, setName] = useState("");
-  const [organisme, setOrganisme] = useState("");
+  const [organisation, setOrganisation] = useState("");
   const [city, setCity] = useState("");
-  const [description, setDescription] = useState("");
+  const [details, setDetails] = useState("");
   const [category, setCategory] = useState(null);
   const [ajout, setAjout] = useState(null);
   const [date, setDate] = useState("");
@@ -17,7 +17,7 @@ export default function Form() {
 
   console.log(ajout);
   console.log(category);
-  console.log(description);
+  console.log(details);
   console.log(city);
 
   return (
@@ -50,18 +50,18 @@ export default function Form() {
                 <option value="stage">Stage</option>
                 <option value="formation">Formation</option>
                 <option value="concours">Concours</option>
-                <option value="residence">Emploi</option>
+                <option value="residence">residence</option>
               </select>
 
               <div>
-                <label htmlFor="description">
+                <label htmlFor="details">
                   Une petite description
                   <textarea
-                    id="description"
-                    name="description"
-                    placeholder="description"
-                    value={description}
-                    onChange={(e) => setDescription(e.target.value)}
+                    id="details"
+                    name="details"
+                    placeholder="details"
+                    value={details}
+                    onChange={(e) => setDetails(e.target.value)}
                   />
                 </label>
               </div>
@@ -79,14 +79,14 @@ export default function Form() {
                 </label>
               </div>
               <div>
-                <label htmlFor="Organisme">
-                  Organisme d'accueil
+                <label htmlFor="organisation">
+                  organisation d'accueil
                   <input
-                    id="organisme"
-                    name="organisme"
-                    placeholder="organisme"
-                    value={organisme}
-                    onChange={(e) => setOrganisme(e.target.value)}
+                    id="organisation"
+                    name="organisation"
+                    placeholder="organisation"
+                    value={organisation}
+                    onChange={(e) => setOrganisation(e.target.value)}
                   />
                 </label>
               </div>
@@ -102,7 +102,28 @@ export default function Form() {
                   />
                 </label>
               </div>
-              <button type="submit" title="Envoyer le message">
+              <button
+                type="submit"
+                title="Envoyer le message"
+                onClick={(event) => {
+                  fetch("http://localhost:5000/exhibition/", {
+                    method: "post",
+                    headers: {
+                      Accept: "application/json",
+                      "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                      category: { category },
+                      organisation: { organisation },
+                      date: { date },
+                      details: { details },
+                      city: { city },
+                    }),
+                  })
+                    .then((res) => res.json())
+                    .then((res) => console.log(res));
+                }}
+              >
                 Envoyer
               </button>
             </div>
@@ -118,14 +139,14 @@ export default function Form() {
                   <option value="artisannat">Artisannat</option>
                 </select>
                 <div>
-                  <label htmlFor="description">
+                  <label htmlFor="details">
                     Une petite description
                     <textarea
-                      id="description"
-                      name="description"
-                      placeholder="description"
-                      value={description}
-                      onChange={(e) => setDescription(e.target.value)}
+                      id="details"
+                      name="details"
+                      placeholder="details"
+                      value={details}
+                      onChange={(e) => setDetails(e.target.value)}
                     />
                   </label>
                 </div>

@@ -33,13 +33,11 @@ app.get("/exhibition", (req, res)=> {
   });
 });
 
-app.post(`/${section}/`, (req, res)=> {
-const {name, category} =req.body;
-if (section =exhibition)
-{
+app.post("/exhibition/", (req, res)=> {
+const { category, organisation, date, details, city} =req.body;
 connection.query(
-  "INSERT INTO exhibition(name, category) VALUES (?, ?)",
-  [title, genre, picture, artist],
+  "INSERT INTO exhibition(category, organisation, date, details, city ) VALUES (?, ?, ?, ?, ? )",
+  [category, organisation, date, details, city],
   (err, results) => {
     if (err) {
       console.log(err);
@@ -48,12 +46,14 @@ connection.query(
       res.status(200).json({"msg" : "Successfully saved" });
     }
   }
-)
-}
-else {
+
+);});
+
+app.post("/sculpture", (req, res)=> {
+const {title, thematic, details, material, create_date, category, price, pic_url} =req.body;
 connection.query(
-  "INSERT INTO sculpture(name, category) VALUES (?, ?)",
-  [title, genre, picture, artist],
+  "INSERT INTO sculpture( title, thematic, details, material, create_date, category, price, pic_url) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+  [ title, thematic, details, material, create_date, category, price, pic_url],
   (err, results) => {
     if (err) {
       console.log(err);
@@ -62,9 +62,8 @@ connection.query(
       res.status(200).json({"msg" : "Successfully saved" });
     }
   }
-)
-}
-});
+);});
+
 
 app.get("/experience", async (req, res)=> {
 const stage = connection.query("SELECT * FROM exhibition WHERE category = 'Stage' ORDER BY date");
