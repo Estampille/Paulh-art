@@ -21,7 +21,7 @@ export default function Shop() {
       {sculptureDetail.length < 1
         ? ""
         : Object.entries(sculptureDetail).map(([key, item]) => (
-            <article className={styles.card}>
+            <article key={key} className={styles.card}>
               <figure className={styles.figure}>
                 <img className={styles.image} alt="" src={item.pic_url} />
                 <figcaption className={styles.figcaption}>
@@ -46,7 +46,7 @@ export default function Shop() {
 
       <Modal
         isOpen={open}
-        onRequestClose={open}
+        onRequestClose={() => this.setState({ open: null })}
         ariaHideApp={false}
         className={styles.modalcard}
       >

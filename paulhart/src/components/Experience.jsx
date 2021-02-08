@@ -26,7 +26,7 @@ export default function Experience() {
           {experiences.residenceData < 1
             ? ""
             : experiences.residenceData.map((item) => (
-                <article className={styles.card}>
+                <article key={item.id} className={styles.card}>
                   <h3 className={styles.name}>
                     {item.organisation}, {item.city}.
                   </h3>
@@ -43,7 +43,7 @@ export default function Experience() {
             {experiences.emploiData < 1
               ? ""
               : experiences.emploiData.map((item) => (
-                  <article className={styles.card}>
+                  <article key={item.id} className={styles.card}>
                     <h3 className={styles.name}>
                       {item.organisation}, {item.city}.
                     </h3>
@@ -60,7 +60,7 @@ export default function Experience() {
             {experiences.concoursData < 1
               ? ""
               : experiences.concoursData.map((item) => (
-                  <article className={styles.card}>
+                  <article key={item.id} className={styles.card}>
                     <h3 className={styles.name}>
                       {item.organisation}, {item.city}.
                     </h3>
@@ -77,7 +77,7 @@ export default function Experience() {
             {experiences.stageData < 1
               ? ""
               : experiences.stageData.map((item) => (
-                  <article className={styles.card}>
+                  <article key={item.id} className={styles.card}>
                     <h3 className={styles.name}>
                       {item.organisation}, {item.city}.
                     </h3>
@@ -95,7 +95,7 @@ export default function Experience() {
           {experiences.formationData < 1
             ? ""
             : experiences.formationData.map((item) => (
-                <article className={styles.card}>
+                <article key={item.id} className={styles.card}>
                   <h3 className={styles.name}>
                     {item.organisation}, {item.city}.
                   </h3>
