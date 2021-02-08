@@ -26,7 +26,7 @@ export default function Shop() {
                 <img className={styles.image} alt="" src={item.pic_url} />
                 <figcaption className={styles.figcaption}>
                   <h2 className={styles.name}>{item.title}</h2>
-                  <p className={styles.material}>{item.material}</p>
+
                   <span className={styles.price}>{item.price} Euros</span>
                 </figcaption>
                 <button

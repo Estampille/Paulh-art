@@ -16,7 +16,7 @@ export default function Experience() {
       .then((experiences_) => setExperiences(experiences_));
   }, []);
 
-  console.log(experiences.emploiData);
+  console.log(experiences.residenceData);
 
   return (
     <div className={styles.cv}>

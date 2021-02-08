@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "./Form.module.css";
 
 export default function Form() {
-  const [name, setName] = useState("");
+  const [create_date, setCreate_date] = useState("");
   const [organisation, setOrganisation] = useState("");
   const [city, setCity] = useState("");
   const [details, setDetails] = useState("");
@@ -12,14 +12,32 @@ export default function Form() {
   const [thematic, setThematic] = useState("");
   const [material, setMaterial] = useState("");
   const [price, setPrice] = useState("");
-  const [image, setImage] = useState("");
   const [exhibition, setExhibition] = useState("");
+  const [title, setTitle] = useState("");
+  const [pic_url, setPic_url] = useState("");
+  const sculpture = "sculpture";
 
-  console.log(ajout);
-  console.log(category);
-  console.log(details);
-  console.log(city);
+  const postExhib = {
+    category,
+    organisation,
+    date,
+    details,
+    city,
+  };
 
+  const postSculpture = {
+    sculpture,
+    title,
+    thematic,
+    details,
+    material,
+    create_date,
+    category,
+    price,
+    pic_url,
+  };
+
+  console.log(postExhib);
   return (
     <article className={styles.Contact}>
       <h2>Nous contacter</h2>
@@ -112,13 +130,7 @@ export default function Form() {
                       Accept: "application/json",
                       "Content-Type": "application/json",
                     },
-                    body: JSON.stringify({
-                      category: { category },
-                      organisation: { organisation },
-                      date: { date },
-                      details: { details },
-                      city: { city },
-                    }),
+                    body: JSON.stringify(postExhib),
                   })
                     .then((res) => res.json())
                     .then((res) => console.log(res));
@@ -151,14 +163,14 @@ export default function Form() {
                   </label>
                 </div>
                 <div>
-                  <label htmlFor="name">
+                  <label htmlFor="title">
                     Nom
                     <input
-                      id="name"
-                      name="name"
-                      placeholder="name"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
+                      id="title"
+                      name="title"
+                      placeholder="title"
+                      value={title}
+                      onChange={(e) => setTitle(e.target.value)}
                     />
                   </label>
                 </div>
@@ -169,8 +181,8 @@ export default function Form() {
                       id="date"
                       name="date"
                       placeholder="date"
-                      value={date}
-                      onChange={(e) => setDate(e.target.value)}
+                      value={create_date}
+                      onChange={(e) => setCreate_date(e.target.value)}
                     />
                   </label>
                 </div>
@@ -217,8 +229,8 @@ export default function Form() {
                       id="image"
                       name="image"
                       placeholder="image"
-                      value={image}
-                      onChange={(e) => setImage(e.target.value)}
+                      value={pic_url}
+                      onChange={(e) => setPic_url(e.target.value)}
                     />
                   </label>
                 </div>
@@ -235,7 +247,22 @@ export default function Form() {
                   </label>
                 </div>
 
-                <button type="submit" title="Envoyer le message">
+                <button
+                  type="submit"
+                  title="Envoyer le message"
+                  onClick={(event) => {
+                    fetch("http://localhost:5000/sculpture/", {
+                      method: "post",
+                      headers: {
+                        Accept: "application/json",
+                        "Content-Type": "application/json",
+                      },
+                      body: JSON.stringify(postSculpture),
+                    })
+                      .then((res) => res.json())
+                      .then((res) => console.log(res));
+                  }}
+                >
                   Envoyer
                 </button>
               </div>
