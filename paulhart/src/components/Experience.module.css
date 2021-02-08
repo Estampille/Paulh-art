@@ -16,3 +16,8 @@
 .name{
 	width:50%;
 }
+
+.section{
+	border-bottom: solid 1px white;
+	width:90%
+}
