@@ -1,3 +1,12 @@
 .Cv{
   background-color: #1d1f22;
 }
+
+@media (max-width: 991.98px)
+{
+ .Cv{
+font-size: 0.6em;
+ }
+
+
+}

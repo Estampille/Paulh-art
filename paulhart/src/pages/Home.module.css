@@ -20,6 +20,7 @@ body{
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+
 }
 .intro{
   text-align: center;
@@ -27,4 +28,18 @@ body{
   font-size: 1.5em;
   font-family: 'Dancing Script', cursive;
   
+}
+
+@media (max-width: 991.98px)
+{
+  .intro{
+    font-size: 1em;
+    width: 90%;
+
+  }
+
+  .home{
+    justify-content: center;
+  }
+
 }

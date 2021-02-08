@@ -97,3 +97,52 @@ height: 5vh;
   transition-timing-function: cubic-bezier(.2, 3, .4, 1);
   user-select: none;
 }
+
+@media (max-width: 991.98px)
+{
+  .all{
+    
+    flex-direction: column;
+  
+  }
+  .card{
+    width: 100%;
+    
+    
+  }
+  .image{
+    object-fit: cover; 
+    width: 100vw;
+    height: 50vh;
+    border-radius: 30px;
+  }  
+  .figcaption{
+    display:flex;
+    flex-direction: column;
+    align-content: center;
+  }
+
+  .modalfigure{
+    display: flex;
+    flex-direction: column;
+  align-content: center;
+   
+  }
+
+  .modalimage{
+    width: 100%;
+    margin:0;
+    object-fit: cover; 
+  }
+  
+  .modalfigcaption{
+    width: 100%;
+    margin:0;
+    display: flex;
+    flex-direction: column;
+  }
+  .modalcard{
+    max-height: calc(100vh);
+    overflow-y: auto;
+  }
+}

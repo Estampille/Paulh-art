@@ -49,10 +49,10 @@ connection.query(
 
 );});
 
-app.post("/sculpture", (req, res)=> {
+app.post("/sculpture/", (req, res)=> {
 const {title, thematic, details, material, create_date, category, price, pic_url} =req.body;
 connection.query(
-  "INSERT INTO sculpture( title, thematic, details, material, create_date, category, price, pic_url) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+  "INSERT INTO sculpture( title, thematic, details, material, create_date, category, price, pic_url) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
   [ title, thematic, details, material, create_date, category, price, pic_url],
   (err, results) => {
     if (err) {

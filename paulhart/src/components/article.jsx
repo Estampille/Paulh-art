@@ -25,7 +25,7 @@ export default function Shop() {
               <figure className={styles.figure}>
                 <img className={styles.image} alt="" src={item.pic_url} />
                 <figcaption className={styles.figcaption}>
-                  <h2 className={styles.name}>{item.title}</h2>
+                  <h3 className={styles.name}>{item.title}</h3>
 
                   <span className={styles.price}>{item.price} Euros</span>
                 </figcaption>
@@ -55,8 +55,8 @@ export default function Shop() {
             <figure className={styles.modalfigure}>
               <img className={styles.modalimage} alt="" src={info.pic_url} />
               <figcaption className={styles.modalfigcaption}>
-                <h2 className={styles.modalname}>{info.title}</h2>
-                <h3>{info.thematic}</h3>
+                <h3 className={styles.modalname}>{info.title}</h3>
+                <h4>{info.thematic}</h4>
                 <p className={styles.modaldetails}>{info.details}</p>
                 <p className={styles.modalmaterial}>{info.material}</p>
                 <span className={styles.modalprice}>{info.price} Euros</span>

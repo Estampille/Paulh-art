@@ -40,7 +40,7 @@ export default function Form() {
   console.log(postExhib);
   return (
     <article className={styles.Contact}>
-      <h2>Nous contacter</h2>
+      <h2 className={styles.titre}>Nous contacter</h2>
       <div className={styles.areaOfText}>
         <form
           onSubmit={(event) => {
@@ -56,102 +56,24 @@ export default function Form() {
             <option value="exp">j'ajoute une ligne à mon expérience</option>
             <option value="sculpture">J'ajoute une création</option>
           </select>
-
-          {ajout === "exp" ? (
-            <div>
-              <select
-                name="Catégorie"
-                id="catégorie"
-                onChange={(e) => setCategory(e.target.value)}
-              >
-                <option value="emploi">Emploi</option>
-                <option value="stage">Stage</option>
-                <option value="formation">Formation</option>
-                <option value="concours">Concours</option>
-                <option value="residence">residence</option>
-              </select>
-
-              <div>
-                <label htmlFor="details">
-                  Une petite description
-                  <textarea
-                    id="details"
-                    name="details"
-                    placeholder="details"
-                    value={details}
-                    onChange={(e) => setDetails(e.target.value)}
-                  />
-                </label>
-              </div>
-
-              <div>
-                <label htmlFor="city">
-                  Ville
-                  <input
-                    id="city"
-                    name="city"
-                    placeholder="city"
-                    value={city}
-                    onChange={(e) => setCity(e.target.value)}
-                  />
-                </label>
-              </div>
-              <div>
-                <label htmlFor="organisation">
-                  organisation d'accueil
-                  <input
-                    id="organisation"
-                    name="organisation"
-                    placeholder="organisation"
-                    value={organisation}
-                    onChange={(e) => setOrganisation(e.target.value)}
-                  />
-                </label>
-              </div>
-              <div>
-                <label htmlFor="date">
-                  Dates
-                  <input
-                    id="date"
-                    name="date"
-                    placeholder="date"
-                    value={date}
-                    onChange={(e) => setDate(e.target.value)}
-                  />
-                </label>
-              </div>
-              <button
-                type="submit"
-                title="Envoyer le message"
-                onClick={(event) => {
-                  fetch("http://localhost:5000/exhibition/", {
-                    method: "post",
-                    headers: {
-                      Accept: "application/json",
-                      "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(postExhib),
-                  })
-                    .then((res) => res.json())
-                    .then((res) => console.log(res));
-                }}
-              >
-                Envoyer
-              </button>
-            </div>
-          ) : (
-            <div>
+          <div className={styles.centrer}>
+            {ajout === "exp" ? (
               <div>
                 <select
                   name="Catégorie"
                   id="catégorie"
                   onChange={(e) => setCategory(e.target.value)}
+                  classname={styles.div}
                 >
-                  <option value="art">Art</option>
-                  <option value="artisannat">Artisannat</option>
+                  <option value="emploi">Emploi</option>
+                  <option value="stage">Stage</option>
+                  <option value="formation">Formation</option>
+                  <option value="concours">Concours</option>
+                  <option value="residence">residence</option>
                 </select>
-                <div>
-                  <label htmlFor="details">
+
+                <div classname={styles.div}>
+                  <label htmlFor="details" classname={styles.div}>
                     Une petite description
                     <textarea
                       id="details"
@@ -162,102 +84,54 @@ export default function Form() {
                     />
                   </label>
                 </div>
+
                 <div>
-                  <label htmlFor="title">
-                    Nom
+                  <label htmlFor="city" classname={styles.div}>
+                    Ville
                     <input
-                      id="title"
-                      name="title"
-                      placeholder="title"
-                      value={title}
-                      onChange={(e) => setTitle(e.target.value)}
+                      id="city"
+                      name="city"
+                      placeholder="city"
+                      value={city}
+                      onChange={(e) => setCity(e.target.value)}
                     />
                   </label>
                 </div>
                 <div>
-                  <label htmlFor="date">
+                  <label htmlFor="organisation" classname={styles.div}>
+                    organisation d'accueil
+                    <input
+                      id="organisation"
+                      name="organisation"
+                      placeholder="organisation"
+                      value={organisation}
+                      onChange={(e) => setOrganisation(e.target.value)}
+                    />
+                  </label>
+                </div>
+                <div>
+                  <label htmlFor="date" classname={styles.div}>
                     Dates
                     <input
                       id="date"
                       name="date"
                       placeholder="date"
-                      value={create_date}
-                      onChange={(e) => setCreate_date(e.target.value)}
+                      value={date}
+                      onChange={(e) => setDate(e.target.value)}
                     />
                   </label>
                 </div>
-                <div>
-                  <label htmlFor="thematic">
-                    Thématique
-                    <input
-                      id="thematic"
-                      name="thematic"
-                      placeholder="thematic"
-                      value={thematic}
-                      onChange={(e) => setThematic(e.target.value)}
-                    />
-                  </label>
-                </div>
-                <div>
-                  <label htmlFor="material">
-                    Thématique
-                    <input
-                      id="material"
-                      name="material"
-                      placeholder="material"
-                      value={material}
-                      onChange={(e) => setMaterial(e.target.value)}
-                    />
-                  </label>
-                </div>
-                <div>
-                  <label htmlFor="price">
-                    Prix
-                    <input
-                      id="price"
-                      name="price"
-                      placeholder="price"
-                      value={price}
-                      onChange={(e) => setPrice(e.target.value)}
-                    />
-                  </label>
-                </div>
-                <div>
-                  <label htmlFor="image">
-                    Url image
-                    <input
-                      id="image"
-                      name="image"
-                      placeholder="image"
-                      value={pic_url}
-                      onChange={(e) => setPic_url(e.target.value)}
-                    />
-                  </label>
-                </div>
-                <div>
-                  <label htmlFor="exhibition">
-                    Cet objet a t-il était exposé ?
-                    <input
-                      id="exhibition"
-                      name="exhibition"
-                      placeholder="exhibition"
-                      value={exhibition}
-                      onChange={(e) => setExhibition(e.target.value)}
-                    />
-                  </label>
-                </div>
-
                 <button
                   type="submit"
                   title="Envoyer le message"
                   onClick={(event) => {
-                    fetch("http://localhost:5000/sculpture/", {
+                    fetch("http://localhost:5000/exhibition/", {
                       method: "post",
                       headers: {
                         Accept: "application/json",
                         "Content-Type": "application/json",
                       },
-                      body: JSON.stringify(postSculpture),
+                      body: JSON.stringify(postExhib),
                     })
                       .then((res) => res.json())
                       .then((res) => console.log(res));
@@ -266,8 +140,136 @@ export default function Form() {
                   Envoyer
                 </button>
               </div>
-            </div>
-          )}
+            ) : (
+              <div>
+                <div classname={styles.div}>
+                  <select
+                    name="Catégorie"
+                    id="catégorie"
+                    onChange={(e) => setCategory(e.target.value)}
+                  >
+                    <option value="art">Art</option>
+                    <option value="artisannat">Artisannat</option>
+                  </select>
+                  <div>
+                    <label htmlFor="details" className={styles.div}>
+                      Une petite description
+                      <textarea
+                        id="details"
+                        name="details"
+                        placeholder="details"
+                        value={details}
+                        onChange={(e) => setDetails(e.target.value)}
+                      />
+                    </label>
+                  </div>
+                  <div classname={styles.div}>
+                    <label htmlFor="title" classname={styles.div}>
+                      Nom
+                      <input
+                        id="title"
+                        name="title"
+                        placeholder="title"
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
+                      />
+                    </label>
+                  </div>
+                  <div>
+                    <label htmlFor="date" className={styles.div}>
+                      Dates
+                      <input
+                        id="date"
+                        name="date"
+                        placeholder="date"
+                        value={create_date}
+                        onChange={(e) => setCreate_date(e.target.value)}
+                      />
+                    </label>
+                  </div>
+                  <div classname={styles.div}>
+                    <label htmlFor="thematic" className={styles.div}>
+                      Thématique
+                      <input
+                        id="thematic"
+                        name="thematic"
+                        placeholder="thematic"
+                        value={thematic}
+                        onChange={(e) => setThematic(e.target.value)}
+                      />
+                    </label>
+                  </div>
+                  <div classname={styles.div}>
+                    <label htmlFor="material" className={styles.div}>
+                      Matériaux
+                      <input
+                        id="material"
+                        name="material"
+                        placeholder="material"
+                        value={material}
+                        onChange={(e) => setMaterial(e.target.value)}
+                      />
+                    </label>
+                  </div>
+                  <div>
+                    <label htmlFor="price" className={styles.div}>
+                      Prix
+                      <input
+                        id="price"
+                        name="price"
+                        placeholder="price"
+                        value={price}
+                        onChange={(e) => setPrice(e.target.value)}
+                      />
+                    </label>
+                  </div>
+                  <div classname={styles.div}>
+                    <label htmlFor="image" className={styles.div}>
+                      Url image
+                      <input
+                        id="image"
+                        name="image"
+                        placeholder="image"
+                        value={pic_url}
+                        onChange={(e) => setPic_url(e.target.value)}
+                      />
+                    </label>
+                  </div>
+                  <div classname={styles.div}>
+                    <label htmlFor="exhibition" className={styles.div}>
+                      Cet objet a t-il était exposé ?
+                      <input
+                        id="exhibition"
+                        name="exhibition"
+                        placeholder="exhibition"
+                        value={exhibition}
+                        onChange={(e) => setExhibition(e.target.value)}
+                      />
+                    </label>
+                  </div>
+
+                  <button
+                    type="submit"
+                    title="Envoyer le message"
+                    onClick={(event) => {
+                      fetch("http://localhost:5000/sculpture/", {
+                        method: "post",
+                        headers: {
+                          Accept: "application/json",
+                          "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify(postSculpture),
+                      })
+                        .then((res) => res.json())
+                        .then((res) => console.log(res));
+                    }}
+                  >
+                    Envoyer
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
         </form>
       </div>
     </article>

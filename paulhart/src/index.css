@@ -21,14 +21,6 @@ code {
   display: flex;
   flex-direction: column;
 }
-.content {
-  
-  flex: 1 0 auto;
-}
-html,
-body,
-#root {
-  height: 100%;
-  
-}
+
+
 
